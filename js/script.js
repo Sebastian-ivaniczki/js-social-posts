@@ -106,7 +106,7 @@ data.forEach(element => {
           <div class="post__footer">
             <div class="likes js-likes">
               <div class="likes__cta">
-                <button class="like-button js-like-button" href="#" data-postid="1">
+                <button id="like-button" class="like-button js-like-button" href="#" data-postid="1">
                   <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                   <span class="like-button__label">Mi Piace</span>
                 </button>
@@ -117,4 +117,11 @@ data.forEach(element => {
         </div>
       </div>
     `    
+});
+
+//prendo il btn in pagina
+const btn = document.getElementById('like-button');
+
+btn.addEventListener('click', function() {
+    btn.classList.add("like-button--liked");
 });
