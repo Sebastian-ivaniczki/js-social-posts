@@ -75,3 +75,11 @@ const data = [
     likes: '100'
 },
 ]
+// prendo l'elemento in pagina
+const socialPage = document.getElementById('social-page')
+data.forEach(element => {
+   // prendo ogni elemento dell'aray 
+    const {id ,author, postDate, profilePick, post, postPick, likes} = element;
+
+    console.log(element) 
+});
