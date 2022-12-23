@@ -120,10 +120,15 @@ data.forEach(element => {
 });
 
 //prendo il btn in pagina
+
 const buttons = document.getElementsByClassName('js-like-button');
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
-    buttons.classList.add('like-button--liked')
+    this.classList.add('like-button--liked')
+    data.forEach(({ likes }) => {
+        likes++;
+      });
   });
 }
+
