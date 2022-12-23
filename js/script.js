@@ -120,9 +120,10 @@ data.forEach(element => {
 });
 
 //prendo il btn in pagina
-const btn = document.querySelectorAll('.js-like-button')
-console.log(btn)
-btn.addEventListener('click', function() {
-    btn.classList.add("like-button--liked");
-    
-});
+const buttons = document.getElementsByClassName('js-like-button');
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function() {
+    buttons.classList.add('like-button--liked')
+  });
+}
