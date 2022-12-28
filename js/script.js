@@ -75,6 +75,8 @@ const data = [
     likes: '100'
 },
 ]
+
+
 // prendo l'elemento in pagina
 const socialPage = document.getElementById('social-page')
 data.forEach(element => {
@@ -111,7 +113,7 @@ data.forEach(element => {
                   <span class="like-button__label">Mi Piace</span>
                 </button>
               </div>
-              <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone</div>
+              <div class="likes__counter">Piace a <b id="like-counter-${id}" class="js-likes-counter">${likes}</b> persone</div>
             </div>
           </div>
         </div>
@@ -122,13 +124,18 @@ data.forEach(element => {
 //prendo il btn in pagina
 
 const buttons = document.getElementsByClassName('js-like-button');
-
+//aray per contenere i likes
+const likesCounter = []
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
     this.classList.add('like-button--liked')
-    data.forEach(({ likes }) => {
-        likes++;
-      });
+    //!gestione incremento like al click del bottone
+    
+    data[i].likes++;
+    like = document.getElementById(`like-counter-${data[i].id}`);
+    console.log(like)
+    like.innerHTML = data[i].likes++;
+    
   });
 }
 
